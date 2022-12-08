@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Alert from './home/Alert'
 import './home/main.css'
 import Footer from "./footer/Footer";
+import PopUp from "./Popup";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Signup from "../pages/Signup";
 
 
 
@@ -16,6 +19,7 @@ function App() {
             <h1>main coming soon </h1>      
       </div>
         <Footer/>
+        <PopUp />
     </div>  
   );
 }
