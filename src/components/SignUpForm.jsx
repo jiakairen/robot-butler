@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../PopUp.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { db } from "../firebase";
+import { ref, push, child, update } from "firebase/database";
 
 const SignUpForm = (props) => {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +12,9 @@ const SignUpForm = (props) => {
   const [lastName, setLastName] = useState("");
   const [lastNameError, setLastNameError] = useState("");
   const [lastNameSatisfied, setLastNameSatisfied] = useState(false);
+
+  // const [err, setErr] = useState(false);
+
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [emailSatisfied, setEmailSatisfied] = useState(false);
@@ -70,6 +75,20 @@ const SignUpForm = (props) => {
     setEmail("");
     setEmailError("");
     setEmailSatisfied(false);
+
+    // // console.log(e.target[0].value);
+    // const name = e.target[0].value;
+    // const email = e.target[1].value;
+
+    // let obj = {
+    //   name: name,
+    //   email: email,
+    // };
+
+    // const newPostKey = push(child(ref(db), "posts")).key;
+    // const updates = {};
+    // updates["/" + newPostKey] = obj;
+    // return update(ref(db), updates);
   };
 
   const testNameError = (name, nameType) =>
