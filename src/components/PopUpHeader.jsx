@@ -12,7 +12,7 @@ const PopUpHeader = () => {
         <img src={Robot1} alt="robot" />
       </div>
       <div>
-        <p>
+        <p className="text-center">
           Want to get to know more about how to make your life easier by using
           our awesome robot?
         </p>
