@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../PopUp.css";
 import Form from "react-bootstrap/Form";
+import squarePhoto from "../assets/square-photo.png";
+import robotHumanFinger from "../assets/robot-human-finger.png";
 import Button from "react-bootstrap/Button";
 import { db } from "../firebase";
 import { ref, push, child, update } from "firebase/database";
@@ -107,9 +109,22 @@ const SignUpForm = (props) => {
     if (props.signUpState) {
       return (
         <div>
-          <p className="text-center bold">Thank you!</p>
-          <p className="text-center">You will hear from us soon.</p>
-          <div className="text-center">
+          <div>
+            <img
+              src={robotHumanFinger}
+              alt="a robot finger touching a human finger"
+            />
+          </div>
+          <div className="under-fingers">
+            <h3 className="text-center">We'll keep in touch, human!</h3>
+          </div>
+          <div className="thank-you-text">
+            <p className="text-center bold thank-you-words">Thank you!</p>
+            <p className="text-center hear-from-us">
+              You will hear from us soon.
+            </p>
+          </div>
+          <div className="text-center close-button-div">
             <button
               onClick={() => props.onSignUp(false)}
               className="close-button"
@@ -122,26 +137,41 @@ const SignUpForm = (props) => {
     } else {
       return (
         <>
-          <p className="text-center">
-            SIGN UP FOR OUR NEWSLETTER NOW IF YOU DON'T WANT TO MISS OUT!
-          </p>
-          <div>
+          <div className="above-circle-photo">
+            <h3 className="text-center">Join the RoboClub!</h3>
+            <p className="text-center">
+              Stay up to date to get special offers and latest news!
+            </p>
+          </div>
+          <div className="square-photo">
+            <img
+              src={squarePhoto}
+              alt="a human hugging a robot with his left hand on the robot's back"
+            />
+          </div>
+          <div className="form-inputs">
             <Form onSubmit={_handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicFirstName">
                 <Form.Label className={formLabelClass(firstNameError)}>
-                  {firstNameError || "Enter your first name"}
+                  First name
                 </Form.Label>
-                <Form.Control
+                {/* <Form.Control
                   type="text"
                   placeholder="John"
                   onChange={_handleFirstNameInput}
                   value={firstName}
-                />
+                /> */}
+                <input
+                  className="test-input"
+                  placeholder="John"
+                  onChange={_handleFirstNameInput}
+                  value={firstName}
+                ></input>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicLastName">
                 <Form.Label className={formLabelClass(lastNameError)}>
-                  {lastNameError || "Enter your last name"}
+                  Last name
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -153,7 +183,7 @@ const SignUpForm = (props) => {
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className={formLabelClass(emailError)}>
-                  {emailError || "Enter your email"}
+                  Email address
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -161,11 +191,6 @@ const SignUpForm = (props) => {
                   onChange={_handleEmailInput}
                   value={email}
                 />
-                <div className="text-center">
-                  <Form.Text className="text-muted">
-                    You will get our information weekly.
-                  </Form.Text>
-                </div>
               </Form.Group>
               <div className="text-center">
                 <button type="submit" className={buttonVariant}>
@@ -174,11 +199,13 @@ const SignUpForm = (props) => {
               </div>
             </Form>
             <div className="text-center">
-              <a href="#">No, thanks!</a>
+              <a href="#" className="no-thanks-link">
+                No, thanks
+              </a>
             </div>
           </div>
           <div>
-            <p className="text-center">
+            <p className="text-center ts-and-cs">
               By clicking sign up, I agree that I have read and accepted the{" "}
               <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
             </p>
