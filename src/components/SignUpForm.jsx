@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import "../PopUp.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { db } from "../firebase";
+import { ref, push, child, update } from "firebase/database";
 
 const SignUpForm = () => {
+  const [err, setErr] = useState(false);
+
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -17,6 +21,19 @@ const SignUpForm = () => {
 
   const _handleSubmit = (e) => {
     e.preventDefault();
+    // console.log(e.target[0].value);
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+
+    let obj = {
+      name: name,
+      email: email,
+    };
+
+    const newPostKey = push(child(ref(db), "posts")).key;
+    const updates = {};
+    updates["/" + newPostKey] = obj;
+    return update(ref(db), updates);
   };
 
   return (
