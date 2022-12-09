@@ -68,6 +68,17 @@ const SignUpForm = (props) => {
       return;
     }
     props.onSignUp(true);
+
+    let obj = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+    };
+    const newPostKey = push(child(ref(db), "posts")).key;
+    const updates = {};
+    updates["/" + newPostKey] = obj;
+    update(ref(db), updates);
+
     setFirstName("");
     setFirstNameError("");
     setFirstNameSatisfied(false);
@@ -81,16 +92,6 @@ const SignUpForm = (props) => {
     // // console.log(e.target[0].value);
     // const name = e.target[0].value;
     // const email = e.target[1].value;
-
-    // let obj = {
-    //   name: name,
-    //   email: email,
-    // };
-
-    // const newPostKey = push(child(ref(db), "posts")).key;
-    // const updates = {};
-    // updates["/" + newPostKey] = obj;
-    // return update(ref(db), updates);
   };
 
   const testNameError = (name, nameType) =>
@@ -126,7 +127,10 @@ const SignUpForm = (props) => {
           </div>
           <div className="text-center close-button-div">
             <button
-              onClick={() => props.onSignUp(false)}
+              onClick={() => {
+                props.onSignUp(false);
+                props.onClose(false);
+              }}
               className="close-button"
             >
               CLOSE
@@ -155,18 +159,12 @@ const SignUpForm = (props) => {
                 <Form.Label className={formLabelClass(firstNameError)}>
                   First name
                 </Form.Label>
-                {/* <Form.Control
+                <Form.Control
                   type="text"
                   placeholder="John"
                   onChange={_handleFirstNameInput}
                   value={firstName}
-                /> */}
-                <input
-                  className="test-input"
-                  placeholder="John"
-                  onChange={_handleFirstNameInput}
-                  value={firstName}
-                ></input>
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicLastName">
@@ -199,7 +197,11 @@ const SignUpForm = (props) => {
               </div>
             </Form>
             <div className="text-center">
-              <a href="#" className="no-thanks-link">
+              <a
+                href="#"
+                className="no-thanks-link"
+                onClick={() => props.onClose(false)}
+              >
                 No, thanks
               </a>
             </div>

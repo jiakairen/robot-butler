@@ -4,7 +4,7 @@ import SignUpForm from "./SignUpForm";
 import SignUpSuccess from "./SignUpSuccess";
 import "../PopUp.css";
 
-const PopUp = () => {
+const PopUp = (props) => {
   const [success, setSuccess] = useState(false);
 
   const isSuccessful = (state) => {
@@ -14,7 +14,11 @@ const PopUp = () => {
   return (
     <div className="pop-up-window">
       <PopUpHeader />
-      <SignUpForm signUpState={success} onSignUp={isSuccessful} />
+      <SignUpForm
+        signUpState={success}
+        onSignUp={isSuccessful}
+        onClose={props.onClose}
+      />
     </div>
   );
 };

@@ -3,7 +3,8 @@
   box-sizing: border-box;
 }
 
-.pop-up-window {
+.pop-up-window,
+.dashboard {
   max-width: 386px;
   margin: 0 auto;
   border: 1px solid #d9d9d9;
@@ -11,9 +12,11 @@
   box-shadow: 0 0 8px #d9d9d9;
   overflow: hidden;
   font-family: "Open Sans", sans-serif;
+  background-color: white;
 }
 
 .pop-up-header {
+  z-index: 150;
   width: 100%;
   /* height: 177px; */
   /* background-color: #d9d9d9; */
@@ -37,6 +40,7 @@
 
 .sign-up-form {
   /* padding: 10px; */
+  z-index: 200;
   position: relative;
   top: 0px;
 }
