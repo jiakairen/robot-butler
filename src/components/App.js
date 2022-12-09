@@ -49,7 +49,7 @@ function App() {
           <Navbar onSubscribe={showPopup} onDashboard={showDashboard} />
           <Background />
         </div>
-        <Footer />
+        <Footer onSubscribe={showPopup} onDashboard={showDashboard} />
       </div>
       <div className="pop-up">{renderPopup()}</div>
       <div className="pop-up">{renderDashboard()}</div>

@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "./logo2.png";
+import "./main.css";
 
 function ColorSchemesExample(props) {
   return (
@@ -12,11 +13,15 @@ function ColorSchemesExample(props) {
             <img src={logo} />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">Features</Nav.Link>
-            <Nav.Link href="#">Pricing</Nav.Link>
-            <button onClick={() => props.onSubscribe(true)}>Subscribe!</button>
-            <button onClick={() => props.onDashboard(true)}>Dashboard</button>
+            <Nav.Link href="#">Products</Nav.Link>
+            <div className="subscribe-link">
+              <Nav.Link href="#" onClick={() => props.onSubscribe(true)}>
+                Subscribe!
+              </Nav.Link>
+            </div>
+            <Nav.Link href="#" onClick={() => props.onDashboard(true)}>
+              Dashboard
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
