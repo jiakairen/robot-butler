@@ -182,3 +182,11 @@
 .text-danger {
   font-size: 10px;
 }
+
+.close-dashboard {
+  margin-bottom: 10px;
+}
+
+.dashboard-heading {
+  margin-top: 10px;
+}

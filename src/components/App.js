@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "./home/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Alert from "./home/Alert";
 import "./home/main.css";
 import Footer from "./footer/Footer";
 import PopUp from "./Popup";
 import Dashboard from "./Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Signup from "../pages/Signup";
 import Background from "./home/Background";
 
 function App() {

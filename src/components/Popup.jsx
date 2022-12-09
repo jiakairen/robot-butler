@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PopUpHeader from "./PopUpHeader";
 import SignUpForm from "./SignUpForm";
-import SignUpSuccess from "./SignUpSuccess";
 import "../PopUp.css";
 
 const PopUp = (props) => {
