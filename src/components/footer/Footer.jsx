@@ -1,5 +1,6 @@
 import React from "react";
 import './footer.css'
+import logo from './logo2.png'
 
 function Footer (){
 return (
@@ -35,7 +36,7 @@ return (
         </div>
     </div>
     <div className="footer-right col-md-4 col-sm-6">
-        <h2> Company<span> logo</span></h2>
+        <h2><span> <img src={logo} /> </span></h2>
         <p className="menu">
         <a href="#"> Home</a> |
         <a href="#"> About</a> |

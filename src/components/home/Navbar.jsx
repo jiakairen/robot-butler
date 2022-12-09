@@ -6,7 +6,7 @@ import logo from './logo2.png'
 function ColorSchemesExample() {
   return (
     <>
-      <Navbar bg="black" variant="dark">
+      <Navbar bg="p-3 mb-2 bg-light text-dark">
         <Container>
           <Navbar.Brand href="#home" ><img src={logo} /></Navbar.Brand>
           <Nav className="me-auto">

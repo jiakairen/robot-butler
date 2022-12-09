@@ -7,6 +7,7 @@ import Footer from "./footer/Footer";
 import PopUp from "./Popup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "../pages/Signup";
+import Background from "./home/Background";
 
 
 
@@ -15,11 +16,15 @@ function App() {
     <div className="container "> 
       <div className="App">
         <Navbar />
-          {   /* <Alert /> */}
-            <h1>main coming soon </h1>      
+        <Background/>
+
+      
+            {/* <h1>Hello User </h1>  
+            <PopUp />    */}
+            
       </div>
         <Footer/>
-        <PopUp />
+       
     </div>  
   );
 }
