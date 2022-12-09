@@ -49,10 +49,13 @@ function Footer(props) {
             <i className="fa fa-phone"></i>
             <p> (+61) 02 000 000 00</p>
           </div>
-          <div>
+          <div className="support-email">
             <i className="fa fa-envelope"></i>
             <p>
-              <a href="#"> Support@ga.com</a>
+              <a href="#" className="support-email">
+                {" "}
+                Support@ga.com
+              </a>
             </p>
           </div>
         </div>
@@ -84,7 +87,7 @@ function Footer(props) {
             </a>{" "}
             | <a href="#"> Contact</a>
           </p>
-          <p className="name"> Company Name &copy; 2022</p>
+          <p className="name support-email"> Company Name &copy; 2022</p>
         </div>
       </footer>
     </div>

@@ -22,6 +22,7 @@ const Dashboard = (props) => {
     <div className="dashboard">
       <div className="col text-center">
         <h3 className="dashboard-heading">Dashboard</h3>
+        <p>{true && users.length} users subscribed</p>
         <table className="table table-striped align-middle mb-0 bg-white">
           <thead className="bg-light">
             <tr>

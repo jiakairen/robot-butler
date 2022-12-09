@@ -145,7 +145,7 @@ const SignUpForm = (props) => {
           <div className="above-circle-photo">
             <h3 className="text-center">Join the RoboClub!</h3>
             <p className="text-center">
-              Stay up to date to get 10% off and latest news!
+              Subscribe to our newsletter to get 10% off your first purchase!
             </p>
           </div>
           <div className="square-photo">
