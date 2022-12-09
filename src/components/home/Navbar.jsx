@@ -19,9 +19,6 @@ function ColorSchemesExample(props) {
                 Subscribe!
               </Nav.Link>
             </div>
-            <Nav.Link href="#" onClick={() => props.onDashboard(true)}>
-              Dashboard
-            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>

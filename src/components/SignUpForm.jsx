@@ -96,15 +96,16 @@ const SignUpForm = (props) => {
 
   const testNameError = (name, nameType) =>
     name.length < 2 || !/^[A-Za-z]+$/.test(name)
-      ? `You must enter a valid ${nameType} name!`
+      ? `The ${nameType} name must be at least 2 letters long.`
       : "";
 
   const testEmailError = (email) =>
     /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)
       ? ""
-      : "You must enter a valid email!";
+      : "Email must contain only one @ and no special characters.";
 
-  const formLabelClass = (fieldError) => (fieldError === "" ? "" : "invalid");
+  const formLabelClass = (fieldError) =>
+    fieldError === "" ? "form-label-text" : "invalid form-label-text";
 
   const buildForm = () => {
     if (props.signUpState) {
@@ -144,7 +145,7 @@ const SignUpForm = (props) => {
           <div className="above-circle-photo">
             <h3 className="text-center">Join the RoboClub!</h3>
             <p className="text-center">
-              Stay up to date to get special offers and latest news!
+              Stay up to date to get 10% off and latest news!
             </p>
           </div>
           <div className="square-photo">
@@ -165,6 +166,9 @@ const SignUpForm = (props) => {
                   onChange={_handleFirstNameInput}
                   value={firstName}
                 />
+                <Form.Text className="text-danger">
+                  {"" || firstNameError}
+                </Form.Text>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicLastName">
@@ -177,6 +181,9 @@ const SignUpForm = (props) => {
                   onChange={_handleLastNameInput}
                   value={lastName}
                 />
+                <Form.Text className="text-danger">
+                  {"" || lastNameError}
+                </Form.Text>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -189,6 +196,9 @@ const SignUpForm = (props) => {
                   onChange={_handleEmailInput}
                   value={email}
                 />
+                <Form.Text className="text-danger">
+                  {"" || emailError}
+                </Form.Text>
               </Form.Group>
               <div className="text-center">
                 <button type="submit" className={buttonVariant}>

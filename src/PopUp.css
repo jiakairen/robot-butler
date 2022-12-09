@@ -174,3 +174,11 @@
   border-color: #0a82b0;
   /* box-shadow: 0 0 10px #0a82b0; */
 }
+
+.form-label-text {
+  font-size: 13px;
+}
+
+.text-danger {
+  font-size: 10px;
+}

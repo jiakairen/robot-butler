@@ -64,7 +64,7 @@ function Footer(props) {
                 onClick={() => props.onSubscribe(true)}
                 className="footer-button"
               >
-                Subscribe to our Newsletter!
+                Subscribe to Newsletter for 10% off!
               </button>
               {/* <a
                 href="#"
@@ -76,9 +76,13 @@ function Footer(props) {
             </span>
           </h2>
           <p className="menu">
-            <a href="#"> Home</a> |<a href="#"> About</a> |
-            <a href="#"> Services</a> |<a href="#"> Portfolio</a> |
-            <a href="#"> News</a> |<a href="#"> Contact</a>
+            <a href="#"> Home</a> | <a href="#"> About</a> |{" "}
+            <a href="#"> Services</a> |{" "}
+            <a href="#" onClick={() => props.onDashboard(true)}>
+              {" "}
+              Dashboard
+            </a>{" "}
+            | <a href="#"> Contact</a>
           </p>
           <p className="name"> Company Name &copy; 2022</p>
         </div>
