@@ -8,6 +8,7 @@ import PopUp from "./Popup";
 import Dashboard from "./Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "../pages/Signup";
+import Background from "./home/Background";
 
 function App() {
   const [popupVisible, setPopupVisible] = useState(false);
@@ -46,8 +47,7 @@ function App() {
       <div className={blurHome()}>
         <div className="App">
           <Navbar onSubscribe={showPopup} onDashboard={showDashboard} />
-          {/* <Alert /> */}
-          <h1>main coming soon </h1>
+          <Background />
         </div>
         <Footer />
       </div>
